@@ -15,82 +15,158 @@
   "main": "index.js",
   "files": [
     "*.js",
+    "*.es6",
     "*.css",
-    "assets/*"
+    "assets/*",
+    "!karma.conf.js",
+    "!testbundle.js"
   ],
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "babel": {
+    "stage": 0,
+    "loose": "all",
+    "compact": false
+  },
   "eslintConfig": {
-    "extends": "strict/react",
+    "extends": [
+      "strict",
+      "strict-react"
+    ],
     "env": {
       "browser": true
     }
   },
-  "component-devserver": {
-    "example": "./example.es6",
+  "devpack-doc": {
+    "demohtml": {
+      "cmd": "babel-node -p \"require('react-dom/server').renderToString(require('./example'))\""
+    },
     "css": [
-      "/node_modules/mocha/mocha.css",
-      "/index.css"
+      {
+        "src": "./node_modules/mocha/mocha.css"
+      },
+      "./bundle.css"
     ],
     "js": [
-      "/node_modules/react/react.js?browserify&expose=react",
       {
-        "contents": "window.React = require('react');"
+        "src": "./node_modules/mocha/mocha.js"
       },
-      "/index.es6?babelify&debug&expose=index.es6&external=react",
-      "/example.es6?babelify&debug&expose=example.es6&external=react",
       {
-        "contents": "require('react').render(require('example.es6'),document.getElementById('component-preview'));"
+        "src": "./node_modules/chai/chai.js"
       },
-      "/node_modules/mocha/mocha.js",
-      "/node_modules/@economist/component-testharness/node_modules/chai/chai.js",
-      "/node_modules/@economist/component-testharness/node_modules/chai-things/lib/chai-things.js",
-      "/node_modules/@economist/component-testharness/node_modules/chai-as-promised/lib/chai-as-promised.js",
-      "/node_modules/@economist/component-testharness/node_modules/chai-spies/chai-spies.js",
+      {
+        "src": "./node_modules/chai-things/lib/chai-things.js"
+      },
+      {
+        "src": "./node_modules/chai-spies/chai-spies.js"
+      },
       {
         "contents": "chai.should();mocha.setup('bdd');"
       },
-      "/test/index.es6?babelify&debug&external=react",
+      "./testbundle.js",
       {
-        "contents": "mocha.checkLeaks();mocha.run();"
+        "contents": "window.React = require('react');"
+      },
+      {
+        "contents": "require('react-dom').render(require('example'),document.getElementById('component-preview'));"
+      },
+      {
+        "contents": "if(document.getElementById('mocha')){mocha.checkLeaks();mocha.run();}"
       }
     ],
-    "html": [
+    "sections": [
       {
-        "contents": "<div class='component-panel'><h2 class='component-panel-heading'>Tests</h2><div id='mocha' class='test-output'></div></div>"
+        "title": "Readme",
+        "type": "markdown",
+        "src": "./README.md"
+      },
+      {
+        "title": "Example Code",
+        "type": "code",
+        "src": "./example.es6"
+      },
+      {
+        "title": "Tests",
+        "type": "html",
+        "contents": "<div id='mocha' class='test-output'></div>"
       }
     ]
   },
+  "watch": {
+    "doc:html": [
+      "README.md",
+      "./*.js",
+      "package.json"
+    ]
+  },
   "config": {
-    "lint_opts": "--ignore-path .gitignore --ext .es6"
+    "lint_opts": "--ignore-path .gitignore --ext .es6",
+    "testbundle_opts": "-r react -r react-dom -r .:./index.es6 -r ./example.js:example ./test/index.js -o testbundle.js",
+    "ghpages_files": "*.html *.css *.js assets/"
   },
   "scripts": {
     "build": "npm-assets .",
+    "ci": "./build.sh",
+    "doc": "parallelshell 'npm run doc:html' 'npm run doc:js' 'npm run doc:css'",
+    "doc:css": "cssnext --sourcemap example.css bundle.css",
+    "doc:css:watch": "npm run doc:css -- --watch",
+    "doc:html": "npm-assets . && devpack-doc index standalone",
+    "doc:html:watch": "npm-watch",
+    "doc:js": "npm run prepublish && browserify -d $npm_package_config_testbundle_opts",
+    "doc:js:watch": "watchify $npm_package_config_testbundle_opts",
+    "doc:watch": "parallelshell 'npm run doc:html:watch' 'npm run doc:js:watch' 'npm run doc:css:watch'",
     "lint": "eslint $npm_package_config_lint_opts .",
-    "prepublish": "babel index.es6 --stage=0 --loose > index.js",
+    "pages": "git stash save -u pages-stash && git branch -D gh-pages; git checkout --orphan gh-pages && git add -f $npm_package_config_ghpages_files && git commit -anm'ghpages' && git push origin HEAD:gh-pages -f",
+    "prepages": "npm run doc",
+    "prepublish": "babel . -d . -x .es6 --ignore node_modules",
+    "prepublish:watch": "npm run prepublish -- -w",
+    "pretest": "npm run lint",
     "provision": "devpack-configure ./package.json",
-    "serve": "component-devserver .",
-    "test": "npm run test:base -- -R tap",
+    "serve": "browser-sync start --server --files '*.{html,js}'",
+    "test": "karma start",
     "test:base": "mocha -r babel/register -r @economist/component-testharness",
-    "test:watch": "npm run test:base -- -wR min"
+    "test:watch": "npm run test:base -- -wR min",
+    "watch": "parallelshell 'npm run doc:watch' 'npm run prepublish:watch' 'npm run serve'"
   },
   "dependencies": {
-    "@economist/component-icon": "^3.0.1",
-    "@economist/component-omniture": "^1.0.2",
-    "react": "^0.13.3"
+    "@economist/component-icon": "^3.6.6",
+    "react": "^0.14.2"
   },
   "devDependencies": {
-    "@economist/component-devpack": "^2.3.0",
-    "@economist/component-devserver": "^2.0.0",
-    "@economist/component-testharness": "^1.1.0",
-    "babel": "^5.5.8",
-    "eslint": "^0.24.0",
-    "eslint-config-strict": "^2.4.0",
-    "eslint-plugin-filenames": "^0.1.1",
+    "@economist/component-devpack": "^3.5.0",
+    "react-dom": "^0.14.2",
+    "babel": "^5.8.23",
+    "babelify": "^6.3.0",
+    "browser-sync": "^2.8.2",
+    "browserify": "^11.0.1",
+    "chai": "^3.2.0",
+    "chai-spies": "^0.6.0",
+    "chai-things": "^0.2.0",
+    "cssnext": "^1.8.4",
+    "eslint": "^1.3.1",
+    "eslint-config-strict": "^5.0.0",
+    "eslint-config-strict-react": "^2.0.0",
+    "eslint-plugin-filenames": "^0.1.2",
     "eslint-plugin-one-variable-per-var": "^0.0.3",
-    "eslint-plugin-react": "^2.6.3",
+    "eslint-plugin-react": "^3.3.1",
+    "karma": "^0.13.10",
+    "karma-chai": "^0.1.0",
+    "karma-mocha": "^0.2.0",
+    "karma-sauce-launcher": "^0.2.14",
     "minifyify": "^7.0.1",
     "mocha": "^2.2.5",
     "npm-assets": "^0.1.0",
-    "pre-commit": "^1.0.10"
+    "npm-watch": "0.0.1",
+    "parallelshell": "^2.0.0",
+    "pre-commit": "^1.0.10",
+    "react": "^0.14.0",
+    "watchify": "^3.4.0"
+  },
+  "peerDependencies": {
+    "react": "^0.14.2"
   },
   "pre-commit": [
     "lint"

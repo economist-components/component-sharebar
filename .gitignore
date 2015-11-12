@@ -1,5 +1,8 @@
 node_modules/
 *.log
 *.js
+bundle.css
+*.html
+!karma.conf.js
 assets/
 
