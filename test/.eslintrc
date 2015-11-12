@@ -1,1 +1,1 @@
-{"extends":"strict/es6/mocha"}
+{"extends":["strict","strict-react","strict/mocha"]}
