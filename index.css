@@ -1,3 +1,41 @@
-@import './palette.css';
-@import './sharebar.css';
-@import './cube.css';
+@import '@economist/component-palette';
+@import '@economist/component-icon';
+
+.share {
+  background-color: var(--share--background-color, var(--color-kiev));
+}
+
+.share__icons {
+  display: table;
+}
+
+.share__icon {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.share__link use {
+  fill: white;
+}
+
+.share__link {
+  display: block;
+  line-height: 0;
+}
+
+.share__icon > .share__link {
+  background-color: var(--share__link--background-color, var(--color-kiev));
+}
+
+.share__icon > .share__link:hover {
+  background-color: var(--share__link--hover--background-color, var(--color-london));
+}
+
+.share__icon > .share__link use {
+  fill: var(--share__icon--fill, white));
+}
+
+.share__icon > .share__link:hover use {
+  fill: var(--share__icon--hover--fill, white));
+}
