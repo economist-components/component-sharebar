@@ -1,12 +1,12 @@
 {
-  "name": "@economist/component-sharebar-2",
+  "name": "@economist/component-sharebar",
   "version": "3.0.0",
   "description": "Sharebar component",
   "author": "The Economist (http://economist.com)",
   "license": "MIT",
-  "repository": "git@github.com:economist-components/component-sharebar-2.git",
-  "homepage": "https://github.com/economist-components/component-sharebar-2/wiki",
-  "bugs": "https://github.com/economist-components/component-sharebar-2/issues",
+  "repository": "git@github.com:economist-components/component-sharebar.git",
+  "homepage": "https://github.com/economist-components/component-sharebar/wiki",
+  "bugs": "https://github.com/economist-components/component-sharebar/issues",
   "main": "index.js",
   "files": [
     "*.js",
