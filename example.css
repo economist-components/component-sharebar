@@ -1,1 +1,39 @@
 @import '.';
+
+.sharebar-example h2 {
+  margin: 0 2rem;
+}
+
+.header {
+  width: calc(100% - 4rem);
+  margin: 0 2rem;
+  background: var(--color-economist);
+  position: relative;
+  height: 49px;
+  margin-bottom: 80px;
+  display: table;
+}
+
+.header__home {
+  width: 49px;
+}
+
+.header__home use {
+  fill: white;
+}
+
+.header__spacer {
+  background: var(--color-beijing);
+  width: calc(100% - (49px*2));
+}
+
+.header__share {
+  width: 49px;
+}
+
+.header__home,
+.header__spacer,
+.header__share {
+  display: table-cell;
+  line-height: 0;
+}

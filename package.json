@@ -1,17 +1,12 @@
 {
   "name": "@economist/component-sharebar",
-  "version": "2.0.0",
-  "description": "A basic share bar",
+  "version": "3.0.0",
+  "description": "Sharebar component",
   "author": "The Economist (http://economist.com)",
-  "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/the-economist-editorial/sharebar.git"
-  },
-  "homepage": "https://github.com/the-economist-editorial/sharebar#readme",
-  "bugs": {
-    "url": "https://github.com/the-economist-editorial/sharebar/issues"
-  },
+  "license": "MIT",
+  "repository": "git@github.com:economist-components/component-sharebar.git",
+  "homepage": "https://github.com/economist-components/component-sharebar/wiki",
+  "bugs": "https://github.com/economist-components/component-sharebar/issues",
   "main": "index.js",
   "files": [
     "*.js",
@@ -32,17 +27,21 @@
     "compact": false
   },
   "eslintConfig": {
+    "parser": "babel-eslint",
     "extends": [
       "strict",
       "strict-react"
     ],
     "env": {
       "browser": true
+    },
+    "rules": {
+      "func-style": 0
     }
   },
   "devpack-doc": {
     "demohtml": {
-      "cmd": "babel-node -p \"require('react-dom/server').renderToString(require('./example'))\""
+      "cmd": "babel-node -p \"require('react').renderToString(require('./example'))\""
     },
     "css": [
       {
@@ -71,7 +70,7 @@
         "contents": "window.React = require('react');"
       },
       {
-        "contents": "require('react-dom').render(require('example'),document.getElementById('component-preview'));"
+        "contents": "require('react').render(require('example'),document.getElementById('component-preview'));"
       },
       {
         "contents": "if(document.getElementById('mocha')){mocha.checkLeaks();mocha.run();}"
@@ -104,7 +103,7 @@
   },
   "config": {
     "lint_opts": "--ignore-path .gitignore --ext .es6",
-    "testbundle_opts": "-r react -r react-dom -r .:./index.es6 -r ./example.js:example ./test/index.js -o testbundle.js",
+    "testbundle_opts": "-r react -r .:./index.es6 -r ./example.js:example ./test/*.js -o testbundle.js",
     "ghpages_files": "*.html *.css *.js assets/"
   },
   "scripts": {
@@ -133,12 +132,13 @@
   },
   "dependencies": {
     "@economist/component-icon": "^3.6.6",
-    "react": "^0.14.2"
+    "@economist/component-palette": "^1.3.0",
+    "react": "^0.14.3"
   },
   "devDependencies": {
     "@economist/component-devpack": "^3.5.0",
-    "react-dom": "^0.14.2",
     "babel": "^5.8.23",
+    "babel-eslint": "^4.1.3",
     "babelify": "^6.3.0",
     "browser-sync": "^2.8.2",
     "browserify": "^11.0.1",
@@ -146,27 +146,30 @@
     "chai-spies": "^0.6.0",
     "chai-things": "^0.2.0",
     "cssnext": "^1.8.4",
+    "envify": "^3.4.0",
     "eslint": "^1.3.1",
     "eslint-config-strict": "^5.0.0",
     "eslint-config-strict-react": "^2.0.0",
     "eslint-plugin-filenames": "^0.1.2",
     "eslint-plugin-one-variable-per-var": "^0.0.3",
     "eslint-plugin-react": "^3.3.1",
+    "estraverse": "^4.1.1",
     "karma": "^0.13.10",
     "karma-chai": "^0.1.0",
     "karma-mocha": "^0.2.0",
     "karma-sauce-launcher": "^0.2.14",
-    "minifyify": "^7.0.1",
     "mocha": "^2.2.5",
     "npm-assets": "^0.1.0",
     "npm-watch": "0.0.1",
     "parallelshell": "^2.0.0",
     "pre-commit": "^1.0.10",
-    "react": "^0.14.0",
+    "react": "^0.14.3",
+    "react-addons-test-utils": "^0.14.3",
+    "react-dom": "^0.14.3",
     "watchify": "^3.4.0"
   },
   "peerDependencies": {
-    "react": "^0.14.2"
+    "react": "^0.14.3"
   },
   "pre-commit": [
     "lint"
