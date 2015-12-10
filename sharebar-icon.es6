@@ -19,7 +19,7 @@ export default function SharebarIcon({
   icon,
 } = {}) {
   return (
-    <div className="share__icon">
+    <div className={`share__icon share__icon--${icon}`}>
       <a href={url}
         title={title}
         className="share__link"
