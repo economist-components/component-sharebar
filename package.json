@@ -131,7 +131,7 @@
     "watch": "parallelshell 'npm run doc:watch' 'npm run prepublish:watch' 'npm run serve'"
   },
   "dependencies": {
-    "@economist/component-icon": "^3.6.6",
+    "@economist/component-icon": "5.9.0",
     "@economist/component-palette": "^1.3.0",
     "react": "^0.14.3"
   },
