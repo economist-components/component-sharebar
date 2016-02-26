@@ -1,6 +1,6 @@
+import Icon from '@economist/component-icon';
 import React from 'react';
 import Sharebar from '.';
-import Icon from '@economist/component-icon';
 
 export default (
   <div className="sharebar-example">
@@ -26,6 +26,8 @@ export default (
             'facebook',
             'twitter',
             'googleplus',
+            'mail',
+            'print',
           ]}
         />
       </div>

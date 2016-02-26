@@ -18,6 +18,17 @@ const iconProps = {
     title: 'LinkedIn',
     url: 'https://www.linkedin.com/cws/share?url=',
   },
+  mail: {
+    title: 'Mail',
+    url: 'mailto:',
+  },
+  print: {
+    title: 'Print',
+    /* eslint-disable no-script-url */
+    url: 'javascript:if(window.print)window.print()',
+    /* eslint-enable no-script-url */
+    executeDefault: true,
+  },
   whatsapp: {
     title: 'WhatsApp',
     url: 'whatsapp://send?text=',
@@ -32,17 +43,16 @@ export default function Sharebar({
   return (
     <div className="share-component">
       <div className="share-component__icons">
-        {icons.map((icon) => {
-          return (
-            <SharebarIcon
-              key={icon}
-              icon={icon}
-              title={iconProps[icon].title}
-              url={iconProps[icon].url}
-              iconSize={iconSize}
-            />
-          );
-        })}
+        {icons.map((icon) =>
+          <SharebarIcon
+            key={icon}
+            icon={icon}
+            executeDefault={iconProps[icon].executeDefault}
+            title={iconProps[icon].title}
+            url={iconProps[icon].url}
+            iconSize={iconSize}
+          />
+        )}
       </div>
     </div>
   );
