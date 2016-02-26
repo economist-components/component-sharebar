@@ -18,6 +18,15 @@ const iconProps = {
     title: 'LinkedIn',
     url: 'https://www.linkedin.com/cws/share?url=',
   },
+  mail: {
+    title: 'Mail',
+    url: 'mailto:',
+  },
+  print: {
+    title: 'Print',
+    url: 'javascript:if(window.print)window.print()',
+    executeDefault: true,
+  },
   whatsapp: {
     title: 'WhatsApp',
     url: 'whatsapp://send?text=',
@@ -37,6 +46,7 @@ export default function Sharebar({
             <SharebarIcon
               key={icon}
               icon={icon}
+              executeDefault={iconProps[icon].executeDefault}
               title={iconProps[icon].title}
               url={iconProps[icon].url}
               iconSize={iconSize}

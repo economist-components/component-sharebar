@@ -26,6 +26,8 @@ export default (
             'facebook',
             'twitter',
             'googleplus',
+            'mail',
+            'print',
           ]}
         />
       </div>
