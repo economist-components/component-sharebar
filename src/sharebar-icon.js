@@ -1,5 +1,6 @@
-import React from 'react';
+/* eslint-disable react/jsx-no-bind */
 import Icon from '@economist/component-icon';
+import React from 'react';
 
 export function handleClick(executeDefault, event) {
   if (executeDefault) {
@@ -24,7 +25,7 @@ export default function SharebarIcon({
   executeDefault,
 } = {}) {
   return (
-    <div className={`share__icon share__icon--${icon}`}>
+    <div className={`share__icon share__icon--${ icon }`}>
       <a href={url}
         title={title}
         className="share__link"
