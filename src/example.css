@@ -1,30 +1,34 @@
 @import '.';
 
-.sharebar-example h2 {
-  margin: 0 2rem;
-}
-
 .header {
-  width: calc(100% - 4rem);
-  margin: 0 2rem;
-  background: var(--color-economist);
-  position: relative;
-  height: 49px;
-  margin-bottom: 80px;
   display: table;
+  position: relative;
+  width: calc(100% - 4rem);
+  height: 49px;
+  margin: 0 2rem;
+  margin-bottom: 80px;
+  background: var(--color-economist);
 }
 
 .header__home {
   width: 49px;
 }
 
-.header__home use {
-  fill: white;
+/* stylelint-disable selector-no-type */
+
+.sharebar-example h2 {
+  margin: 0 2rem;
 }
 
+.header__home use {
+  fill: #fff;
+}
+
+/* stylelint-enable selector-no-type */
+
 .header__spacer {
+  width: calc(100% - (49px * 2));
   background: var(--color-beijing);
-  width: calc(100% - (49px*2));
 }
 
 .header__share {

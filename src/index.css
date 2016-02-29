@@ -15,9 +15,13 @@
   text-align: center;
 }
 
+/* stylelint-disable selector-no-type */
+
 .share__link use {
-  fill: white;
+  fill: #fff;
 }
+
+/* stylelint-enable selector-no-type */
 
 .share__link {
   display: block;
@@ -32,10 +36,14 @@
   background-color: var(--share__link--hover--background-color, var(--color-london));
 }
 
+/* stylelint-disable selector-no-type */
+
 .share__icon > .share__link use {
-  fill: var(--share__icon--fill, white));
+  fill: var(--share__icon--fill, #fff));
 }
 
 .share__icon > .share__link:hover use {
-  fill: var(--share__icon--hover--fill, white));
+  fill: var(--share__icon--hover--fill, #fff));
 }
+
+/* stylelint-enable selector-no-type */
