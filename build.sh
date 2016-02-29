@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SSH_KEY="${1:-/root/.ssh/id_rsa}"
-DOCKER_IMAGE="node:argon-slim"
+DOCKER_IMAGE="node:argon"
 HOST_IP=$(ip route get 1 | awk '{print $NF;exit}')
 WITH_SINOPIA=${WITH_SINOPIA:-"true"}
 SINOPIA_URL="http://${HOST_IP}:4873"
@@ -35,7 +35,6 @@ exec docker run \
     "${DOCKER_IMAGE}" \
     /bin/sh -cx "\
         trap 'chmod 777 node_modules -R' EXIT &&\
-        apt-get update && apt-get install git -y
         cd /code &&\
         umask 000 &&\
         printf \"@economist:registry=https://registry.npmjs.org/\n//registry.npmjs.org/:_authToken=%s\n\" \"$NPM_TOKEN\" > ~/.npmrc &&\
