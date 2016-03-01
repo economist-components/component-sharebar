@@ -1,10 +1,9 @@
 import React from 'react';
+import Sharebar from '../src';
 import TestUtils from 'react-addons-test-utils';
 import chai from 'chai';
 import chaiSpies from 'chai-spies';
 chai.use(chaiSpies).should();
-
-import Sharebar from '..';
 
 describe('Sharebar', () => {
   it('renders a React element', () => {
