@@ -1,0 +1,103 @@
+/**
+ * Colors
+ */
+
+.icon {
+  display: inline-block;
+  text-indent: -30000px;
+  height: 1em;
+  width: 1em;
+  background-repeat: no-repeat;
+  line-height: 1;
+}
+
+.share {
+  background-color: #383E42;
+}
+
+.share__icons {
+  display: table;
+}
+
+.share__icon {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* stylelint-disable selector-no-type */
+
+.share__link use {
+  fill: #fff;
+}
+
+/* stylelint-enable selector-no-type */
+
+.share__link {
+  display: block;
+  line-height: 0;
+}
+
+.share__icon > .share__link {
+  background-color: #383E42;
+}
+
+.share__icon > .share__link:hover {
+  background-color: #B6B6B6;
+}
+
+/* stylelint-disable selector-no-type */
+
+.share__icon > .share__link use {
+  fill: #fff);
+}
+
+.share__icon > .share__link:hover use {
+  fill: #fff);
+}
+
+/* stylelint-enable selector-no-type */
+
+.header {
+  display: table;
+  position: relative;
+  width: calc(100% - 4rem);
+  height: 49px;
+  margin: 0 32px;
+  margin: 0 2rem;
+  margin-bottom: 80px;
+  background: #E3120b;
+}
+
+.header__home {
+  width: 49px;
+}
+
+/* stylelint-disable selector-no-type */
+
+.sharebar-example h2 {
+  margin: 0 32px;
+  margin: 0 2rem;
+}
+
+.header__home use {
+  fill: #fff;
+}
+
+/* stylelint-enable selector-no-type */
+
+.header__spacer {
+  width: calc(100% - 98px);
+  background: #121212;
+}
+
+.header__share {
+  width: 49px;
+}
+
+.header__home,
+.header__spacer,
+.header__share {
+  display: table-cell;
+  line-height: 0;
+}

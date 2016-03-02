@@ -1,8 +1,0 @@
-{
-  "extends": [
-    "strict",
-    "strict-react",
-    "strict/mocha",
-    "strict/test"
-  ]
-}
