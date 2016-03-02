@@ -146,7 +146,7 @@
     "eslint-plugin-react": "^4.1.0",
     "estraverse": "^4.1.1",
     "ghooks": "^1.0.1",
-    "git-directory-deploy": "^1.4.0",
+    "git-directory-deploy": "^1.5.0",
     "hbs-cli": "^1.0.0",
     "karma": "^0.13.21",
     "karma-chai": "^0.1.0",
