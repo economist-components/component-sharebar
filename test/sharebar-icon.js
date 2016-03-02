@@ -1,10 +1,8 @@
 import React from 'react';
-import chai from 'chai';
+import SharebarIcon from '../src/sharebar-icon';
 import TestUtils from 'react-addons-test-utils';
+import chai from 'chai';
 chai.should();
-
-import SharebarIcon, { handleClick } from '../sharebar-icon';
-import Icon from '@economist/component-icon';
 
 describe('Sharebar Icon', () => {
   it('renders a React element', () => {
@@ -39,4 +37,3 @@ describe('Sharebar Icon', () => {
     });
   });
 });
-
