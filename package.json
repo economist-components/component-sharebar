@@ -29,7 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/:economist-components/component-sharebar.git"
+    "url": "git+ssh://git@github.com/economist-components/component-sharebar.git"
   },
   "scripts": {
     "access": "npm-run-all --parallel access:*",
