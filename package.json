@@ -171,7 +171,7 @@
     "semantic-release": "^4.3.5",
     "stylelint": "^4.3.5",
     "stylelint-config-strict": "^2.1.0",
-    "validate-commit-msg": "^2.2.0",
+    "validate-commit-msg": "^2.3.0",
     "watchify": "^3.7.0"
   },
   "peerDependencies": {
