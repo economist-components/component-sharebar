@@ -141,7 +141,7 @@
     "envify": "^3.4.0",
     "eslint": "^2.1.0",
     "eslint-config-strict": "^8.5.0",
-    "eslint-config-strict-react": "^7.0.1",
+    "eslint-config-strict-react": "^8.0.1",
     "eslint-plugin-filenames": "^0.2.0",
     "eslint-plugin-react": "^4.1.0",
     "estraverse": "^4.1.1",
