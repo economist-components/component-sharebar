@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import React from 'react';
 import Sharebar from '../src';
 import TestUtils from 'react-addons-test-utils';

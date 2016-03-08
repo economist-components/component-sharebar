@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import Icon from '@economist/component-icon';
 import React from 'react';
 import Sharebar from '.';
