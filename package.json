@@ -159,7 +159,7 @@
     "npm-assets": "^0.1.1",
     "npm-run-all": "^1.5.1",
     "npm-watch": "0.0.1",
-    "phantomjs-prebuilt": "^2.1.4",
+    "phantomjs-prebuilt": "^2.1.5",
     "postcss-cli": "^2.5.1",
     "postcss-cssnext": "^2.4.0",
     "postcss-import": "^8.0.2",
