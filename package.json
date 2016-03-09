@@ -31,6 +31,7 @@
     "access:editorial": "npm access grant read-only economist:economist-editorial $npm_package_name",
     "access:global-logic": "npm access grant read-only economist:global-logic $npm_package_name",
     "access:infographics": "npm access grant read-only economist:infographics $npm_package_name",
+    "access:public": "npm access public $npm_package_name",
     "access:sudo": "npm access grant read-write economist:read-write-all $npm_package_name",
     "access:yld": "npm access grant read-only economist:yld $npm_package_name",
     "build": "npm-run-all --parallel build:*",
@@ -93,9 +94,6 @@
     "compact": false,
     "ignore": "node_modules",
     "loose": "all",
-    "optional": [
-      "runtime"
-    ],
     "sourceMaps": "inline",
     "stage": 2
   },
@@ -124,7 +122,7 @@
   },
   "devDependencies": {
     "@economist/doc-pack": "^1.0.6",
-    "@economist/provision-react-component": "1.5.2",
+    "@economist/provision-react-component": "1.6.1",
     "babel": "^5.8.34",
     "babel-eslint": "^5.0.0",
     "babel-polyfill": "^6.6.1",
@@ -151,7 +149,6 @@
     "mocha": "^2.4.5",
     "npm-assets": "^0.1.1",
     "npm-run-all": "^1.5.2",
-    "npm-watch": "0.0.1",
     "phantomjs-prebuilt": "^2.1.5",
     "postcss-cli": "^2.5.1",
     "postcss-cssnext": "^2.4.0",
@@ -168,12 +165,5 @@
   },
   "peerDependencies": {
     "react": "^0.14.7"
-  },
-  "watch": {
-    "doc:html": [
-      "README.md",
-      "./*.js",
-      "package.json"
-    ]
   }
 }
