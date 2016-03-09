@@ -93,9 +93,6 @@
     "compact": false,
     "ignore": "node_modules",
     "loose": "all",
-    "optional": [
-      "runtime"
-    ],
     "sourceMaps": "inline",
     "stage": 2
   },
