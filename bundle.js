@@ -34188,6 +34188,7 @@ function Sharebar() {
   var iconSize = _ref$iconSize === undefined ? '49px' : _ref$iconSize;
   var _ref$icons = _ref.icons;
   var icons = _ref$icons === undefined ? ['facebook', 'twitter', 'googleplus', 'linkedin', 'whatsapp'] : _ref$icons;
+  var urlOverrides = _ref.urlOverrides;
 
   return _react2['default'].createElement(
     'div',
@@ -34201,7 +34202,7 @@ function Sharebar() {
           icon: icon,
           executeDefault: iconProps[icon].executeDefault,
           title: iconProps[icon].title,
-          url: iconProps[icon].url,
+          url: urlOverrides[icon] || iconProps[icon].url,
           iconSize: iconSize
         });
       })
@@ -34209,10 +34210,23 @@ function Sharebar() {
   );
 }
 
+Sharebar.defaultProps = {
+  urlOverrides: {}
+};
+
 if (process.env.NODE_ENV !== 'production') {
   Sharebar.propTypes = {
     iconSize: _react2['default'].PropTypes.string,
-    icons: _react2['default'].PropTypes.arrayOf(_react2['default'].PropTypes.string)
+    icons: _react2['default'].PropTypes.arrayOf(_react2['default'].PropTypes.string),
+    urlOverrides: _react2['default'].PropTypes.shape({
+      facebook: _react2['default'].PropTypes.string,
+      twitter: _react2['default'].PropTypes.string,
+      googleplus: _react2['default'].PropTypes.string,
+      linkedin: _react2['default'].PropTypes.string,
+      mail: _react2['default'].PropTypes.string,
+      print: _react2['default'].PropTypes.string,
+      whatsapp: _react2['default'].PropTypes.string
+    })
   };
 }
 module.exports = exports['default'];
@@ -34454,7 +34468,10 @@ exports['default'] = _react2['default'].createElement(
       'div',
       { className: 'header__share' },
       _react2['default'].createElement(_2['default'], {
-        icons: ['facebook', 'twitter', 'googleplus', 'mail', 'print']
+        icons: ['facebook', 'twitter', 'googleplus', 'mail', 'print'],
+        urlOverrides: {
+          mail: 'mailto:?body='
+        }
       })
     )
   )
