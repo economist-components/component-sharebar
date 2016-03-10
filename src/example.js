@@ -30,6 +30,9 @@ export default (
             'mail',
             'print',
           ]}
+          urlOverrides={{
+            mail: 'mailto:?body=',
+          }}
         />
       </div>
     </div>
