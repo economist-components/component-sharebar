@@ -50,6 +50,9 @@ exec docker run \
         npm config set unsafe-perm true &&\
         npm run env &&\
         (npm i || npm i || (npm config delete registry && npm i)) &&\
+        npm config delete registry &&\
+        npm config delete @semantic-release:registry &&\
+        npm config delete @economist:registry &&\
         SAUCE_USERNAME=${SAUCE_USERNAME} \
         SAUCE_ACCESS_KEY=${SAUCE_ACCESS_KEY} \
         npm t &&\

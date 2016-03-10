@@ -39,6 +39,7 @@ export default function Sharebar({
   icons = [
     'facebook', 'twitter', 'googleplus', 'linkedin', 'whatsapp',
   ],
+  urlOverrides,
 } = {}) {
   return (
     <div className="share-component">
@@ -49,7 +50,7 @@ export default function Sharebar({
             icon={icon}
             executeDefault={iconProps[icon].executeDefault}
             title={iconProps[icon].title}
-            url={iconProps[icon].url}
+            url={urlOverrides[icon] || iconProps[icon].url}
             iconSize={iconSize}
           />
         )}
@@ -58,9 +59,22 @@ export default function Sharebar({
   );
 }
 
+Sharebar.defaultProps = {
+  urlOverrides: {},
+};
+
 if (process.env.NODE_ENV !== 'production') {
   Sharebar.propTypes = {
     iconSize: React.PropTypes.string,
     icons: React.PropTypes.arrayOf(React.PropTypes.string),
+    urlOverrides: React.PropTypes.shape({
+      facebook: React.PropTypes.string,
+      twitter: React.PropTypes.string,
+      googleplus: React.PropTypes.string,
+      linkedin: React.PropTypes.string,
+      mail: React.PropTypes.string,
+      print: React.PropTypes.string,
+      whatsapp: React.PropTypes.string,
+    }),
   };
 }
