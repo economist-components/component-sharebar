@@ -149,7 +149,7 @@
     "mocha": "^2.4.5",
     "npm-assets": "^0.1.1",
     "npm-run-all": "^1.6.0",
-    "phantomjs-prebuilt": "^2.1.5",
+    "phantomjs-prebuilt": "^2.1.7",
     "postcss-cli": "^2.5.1",
     "postcss-cssnext": "^2.5.1",
     "postcss-import": "^8.0.2",
