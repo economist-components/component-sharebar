@@ -4,15 +4,15 @@
 
 .icon {
   display: inline-block;
-  text-indent: -30000px;
-  height: 1em;
   width: 1em;
-  background-repeat: no-repeat;
+  height: 1em;
   line-height: 1;
+  text-indent: -30000px;
+  background-repeat: no-repeat;
 }
 
 .share {
-  background-color: #383E42;
+  background-color: #383e42;
 }
 
 .share__icons {
@@ -39,11 +39,11 @@
 }
 
 .share__icon > .share__link {
-  background-color: #383E42;
+  background-color: #383e42;
 }
 
 .share__icon > .share__link:hover {
-  background-color: #B6B6B6;
+  background-color: #b6b6b6;
 }
 
 /* stylelint-disable selector-no-type */
@@ -66,7 +66,7 @@
   margin: 0 32px;
   margin: 0 2rem;
   margin-bottom: 80px;
-  background: #E3120b;
+  background: #e3120b;
 }
 
 .header__home {

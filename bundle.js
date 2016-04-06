@@ -113,7 +113,7 @@ var Icon = (function (_React$Component) {
     key: 'options',
     get: function get() {
       return {
-        icon: ['economist-small', 'economist', 'up', 'down', 'right', 'left', 'minus', 'plus', 'hamburger', 'home', 'magnifier', 'user', 'close', 'share', 'facebook', 'twitter', 'googleplus', 'instagram', 'linkedin', 'mail', 'rss', 'tumblr', 'whatsapp', 'youtube', 'bookmark', 'print', 'worldif', 'film', 'headset', 'video', 'apps']
+        icon: ['economist-small', 'economist', 'up', 'down', 'right', 'left', 'minus', 'plus', 'hamburger', 'home', 'magnifier', 'user', 'close', 'share', 'facebook', 'twitter', 'googleplus', 'instagram', 'linkedin', 'mail', 'rss', 'tumblr', 'whatsapp', 'youtube', 'bookmark', 'print', 'worldif', 'film', 'headset', 'video', 'apps', 'radio', 'balloon']
       };
     }
   }]);
@@ -123,6 +123,7 @@ var Icon = (function (_React$Component) {
 
 exports['default'] = Icon;
 module.exports = exports['default'];
+
 },{"react":"react"}],2:[function(require,module,exports){
 (function (global){
 /* eslint max-len: 0 */
