@@ -116,7 +116,7 @@
     ]
   },
   "dependencies": {
-    "@economist/component-icon": "5.9.0",
+    "@economist/component-icon": "^5.11.0",
     "@economist/component-palette": "^1.3.0",
     "react": "^0.14.8"
   },
