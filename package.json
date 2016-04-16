@@ -142,7 +142,7 @@
     "hbs-cli": "^1.0.0",
     "karma": "^0.13.22",
     "karma-mocha": "^0.2.2",
-    "karma-mocha-reporter": "^2.0.0",
+    "karma-mocha-reporter": "^2.0.1",
     "karma-phantomjs-launcher": "^1.0.0",
     "karma-sauce-launcher": "^0.3.1",
     "live-server": "^0.9.2",
