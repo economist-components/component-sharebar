@@ -166,7 +166,7 @@
     "react-addons-test-utils": "^0.14.8",
     "react-dom": "^0.14.7",
     "semantic-release": "^4.3.5",
-    "stylelint": "^5.0.1",
+    "stylelint": "^6.2.0",
     "stylelint-config-strict": "^4.0.0",
     "travis-after-all": "^1.4.4",
     "validate-commit-msg": "^2.5.0",
