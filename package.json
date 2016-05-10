@@ -169,7 +169,7 @@
     "stylelint": "^6.3.3",
     "stylelint-config-strict": "^4.0.0",
     "travis-after-all": "^1.4.4",
-    "validate-commit-msg": "^2.5.0",
+    "validate-commit-msg": "^2.6.1",
     "watchify": "^3.7.0"
   }
 }
