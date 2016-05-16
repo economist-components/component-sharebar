@@ -134,7 +134,7 @@
     "coveralls": "^2.11.9",
     "envify": "^3.4.0",
     "enzyme": "^2.1.0",
-    "eslint": "^2.4.0",
+    "eslint": "^2.8.0",
     "eslint-config-strict": "^8.5.1",
     "eslint-config-strict-react": "^8.0.1",
     "eslint-plugin-filenames": "^0.2.0",
