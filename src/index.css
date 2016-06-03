@@ -16,6 +16,7 @@
 }
 
 /* stylelint-disable selector-no-type */
+/* no class assigned to svg */
 
 .share__link use {
   fill: #fff;
@@ -37,6 +38,7 @@
 }
 
 /* stylelint-disable selector-no-type */
+/* no class assigned to svg */
 
 .share__icon > .share__link use {
   fill: var(--share__icon--fill, #fff));
