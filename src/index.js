@@ -33,6 +33,11 @@ const iconProps = {
     title: 'WhatsApp',
     url: 'whatsapp://send?text=',
   },
+  purchaseRights: {
+    title: 'Purchase Rights',
+    // This url will need to be overridden because this will error
+    url: 'https://s100.copyright.com/AppDispatchServlet',
+  },
 };
 export default function Sharebar({
   iconSize = '49px',
