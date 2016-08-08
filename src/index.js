@@ -1,6 +1,11 @@
 import React from 'react';
 import SharebarIcon from './sharebar-icon';
 
+function slugCamelCase(word) {
+  const slugCamelCaseReplacer = (match) => `-${ match.toLowerCase() }`;
+  return word.replace(/[A-Z]/g, slugCamelCaseReplacer);
+}
+
 const iconProps = {
   facebook: {
     title: 'Share on Facebook',
@@ -52,7 +57,7 @@ export default function Sharebar({
         {icons.map((icon) =>
           <SharebarIcon
             key={icon}
-            icon={icon}
+            icon={slugCamelCase(icon)}
             executeDefault={iconProps[icon].executeDefault}
             title={iconProps[icon].title}
             url={urlOverrides[icon] || iconProps[icon].url}
