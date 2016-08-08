@@ -43,12 +43,15 @@ describe('Sharebar', () => {
         <Sharebar
           icons={[
             'purchaseRights',
+            'facebook',
           ]}
         />
       );
 
       const sharebar = renderer.getRenderOutput();
+      sharebar.props.children.props.children.length.should.equal(2);
       sharebar.props.children.props.children[0].props.icon.should.equal('purchase-rights');
+      sharebar.props.children.props.children[1].props.icon.should.equal('facebook');
     });
   });
 });
