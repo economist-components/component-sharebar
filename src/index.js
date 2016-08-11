@@ -85,6 +85,7 @@ if (process.env.NODE_ENV !== 'production') {
       mail: React.PropTypes.string,
       print: React.PropTypes.string,
       whatsapp: React.PropTypes.string,
+      purchaseRights: React.PropTypes.string,
     }),
   };
 }
