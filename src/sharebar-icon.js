@@ -2,7 +2,11 @@
 import Icon from '@economist/component-icon';
 import React from 'react';
 
-export function handleClick(executeDefault, event) {
+export function handleClick(flyTitle, blogTitle, executeDefault, event) {
+  const encodedFlytitle = encodeURIComponent(flyTitle);
+  const encodedTitle = encodeURIComponent(blogTitle);
+  const text = `&text=${ encodedFlytitle }:%20${ encodedTitle }`;
+  const via = '&via=theeconomist';
   if (executeDefault) {
     return;
   }
@@ -12,7 +16,7 @@ export function handleClick(executeDefault, event) {
   }
 
   if (event && event.currentTarget && event.currentTarget.getAttribute('href')) {
-    const location = (event.currentTarget.getAttribute('href') + window.location.href);
+    const location = (event.currentTarget.getAttribute('href') + window.location.href + text + via);
     window.open(location, '_blank');
   }
 }
@@ -23,13 +27,15 @@ export default function SharebarIcon({
   iconSize,
   icon,
   executeDefault,
+  blogTitle,
+  flyTitle,
 } = {}) {
   return (
     <div className={`share__icon share__icon--${ icon }`}>
       <a href={url}
         title={title}
         className="share__link"
-        onClick={handleClick.bind(null, executeDefault)}
+        onClick={handleClick.bind(null, flyTitle, blogTitle, executeDefault)}
       >
         <Icon size={iconSize} icon={icon} />
       </a>
