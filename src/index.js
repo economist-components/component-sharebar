@@ -50,7 +50,9 @@ export default function Sharebar({
     'facebook', 'twitter', 'googleplus', 'linkedin', 'whatsapp',
   ],
   urlOverrides,
-} = {}) {
+  title,
+  flyTitle,
+}) {
   return (
     <div className="share-component">
       <div className="share-component__icons">
@@ -62,6 +64,8 @@ export default function Sharebar({
             title={iconProps[icon].title}
             url={urlOverrides[icon] || iconProps[icon].url}
             iconSize={iconSize}
+            blogTitle={title}
+            flyTitle={flyTitle}
           />
         )}
       </div>
@@ -77,6 +81,8 @@ if (process.env.NODE_ENV !== 'production') {
   Sharebar.propTypes = {
     iconSize: React.PropTypes.string,
     icons: React.PropTypes.arrayOf(React.PropTypes.string),
+    title: React.PropTypes.string,
+    flyTitle: React.PropTypes.string,
     urlOverrides: React.PropTypes.shape({
       facebook: React.PropTypes.string,
       twitter: React.PropTypes.string,
