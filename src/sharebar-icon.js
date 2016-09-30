@@ -5,8 +5,11 @@ import React from 'react';
 export function handleClick(flyTitle, blogTitle, executeDefault, event) {
   const encodedFlytitle = encodeURIComponent(flyTitle);
   const encodedTitle = encodeURIComponent(blogTitle);
-  const text = `&text=${ encodedFlytitle }:%20${ encodedTitle }`;
-  const via = '&via=theeconomist';
+  let text = `&text=${ encodedFlytitle }:%20${ encodedTitle }`;
+  if (!flyTitle || !blogTitle) {
+    text = null;
+  }
+  const via = '&via=TheEconomist';
   if (executeDefault) {
     return;
   }
