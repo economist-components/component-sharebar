@@ -7,7 +7,7 @@ export function handleClick(flyTitle, blogTitle, executeDefault, event) {
   const encodedTitle = encodeURIComponent(blogTitle);
   let text = `&text=${ encodedFlytitle }:%20${ encodedTitle }`;
   if (!flyTitle || !blogTitle) {
-    text = null;
+    text = '';
   }
   const via = '&via=TheEconomist';
   if (executeDefault) {
