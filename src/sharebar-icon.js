@@ -37,6 +37,7 @@ export default function SharebarIcon({
     <div className={`share__icon share__icon--${ icon }`}>
       <a href={url}
         title={title}
+        aria-label={title}
         className="share__link"
         onClick={handleClick.bind(null, flyTitle, blogTitle, executeDefault)}
       >
