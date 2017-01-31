@@ -13,7 +13,7 @@ const iconProps = {
   },
   twitter: {
     title: 'Share on Twitter',
-    url: 'https://twitter.com/intent/tweet?url=',
+    url: 'https://twitter.com/share?url=',
   },
   googleplus: {
     title: 'Share on Google Plus',
