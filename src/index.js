@@ -1,3 +1,4 @@
+/* eslint-disable camelcase, id-match  */
 import React from 'react';
 import SharebarIcon from './sharebar-icon';
 
@@ -58,10 +59,8 @@ export default function Sharebar({
     <div className="share-component">
       <div className="share-component__icons">
         {icons.map((icon) => {
-          /* eslint-disable */
           const I13nShareBarIcon =
               typeof i13nFunction === 'undefined' ? SharebarIcon : i13nFunction.generateI13nNode(SharebarIcon, true);
-          /* eslint-enable */
           return (<I13nShareBarIcon
             key={icon}
             icon={slugCamelCase(icon)}
@@ -72,9 +71,7 @@ export default function Sharebar({
             blogTitle={title}
             flyTitle={flyTitle}
             i13nModel={
-              /* eslint-disable */
               typeof i13nFunction === 'undefined' ?
-              /* eslint-enable */
                 null :
                 i13nFunction.createI13nModel(i13nFunction.createModuleItem({
                   id: icon,
