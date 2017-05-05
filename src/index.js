@@ -52,12 +52,17 @@ export default function Sharebar({
   urlOverrides,
   title,
   flyTitle,
+  i13nFunction,
 }) {
   return (
     <div className="share-component">
       <div className="share-component__icons">
-        {icons.map((icon) =>
-          <SharebarIcon
+        {icons.map((icon) => {
+          /* eslint-disable */
+          const I13nShareBarIcon =
+              typeof i13nFunction === 'undefined' ? SharebarIcon : i13nFunction.generateI13nNode(SharebarIcon, true);
+          /* eslint-enable */
+          return (<I13nShareBarIcon
             key={icon}
             icon={slugCamelCase(icon)}
             executeDefault={iconProps[icon].executeDefault}
@@ -66,7 +71,20 @@ export default function Sharebar({
             iconSize={iconSize}
             blogTitle={title}
             flyTitle={flyTitle}
-          />
+            i13nModel={
+              /* eslint-disable */
+              typeof i13nFunction === 'undefined' ?
+              /* eslint-enable */
+                null :
+                i13nFunction.createI13nModel(i13nFunction.createModuleItem({
+                  id: icon,
+                  position: 1,
+                  type: 'content',
+                }),
+              'moduleItem')
+            }
+                  />);
+        }
         )}
       </div>
     </div>
@@ -92,6 +110,12 @@ if (process.env.NODE_ENV !== 'production') {
       print: React.PropTypes.string,
       whatsapp: React.PropTypes.string,
       purchaseRights: React.PropTypes.string,
+    }),
+    i13nFunction: React.PropTypes.shape({
+      generateI13nNode: React.PropTypes.func,
+      createI13nModel: React.PropTypes.func,
+      createModule: React.PropTypes.func,
+      createModuleItem: React.PropTypes.func,
     }),
   };
 }
