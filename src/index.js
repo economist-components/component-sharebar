@@ -73,12 +73,13 @@ export default function Sharebar({
             i13nModel={
               typeof i13nFunction === 'undefined' ?
                 null :
-                i13nFunction.createI13nModel(i13nFunction.createModuleItem({
-                  id: icon,
-                  position: 1,
-                  type: 'content',
-                }),
-              'moduleItem')
+                i13nFunction.createI13nModel(
+                  i13nFunction.createModuleItem({
+                    id: icon,
+                    position: 1,
+                    type: 'content',
+                  }),
+                  'moduleItem')
             }
                   />);
         }
