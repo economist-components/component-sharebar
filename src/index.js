@@ -58,7 +58,7 @@ export default function Sharebar({
   return (
     <div className="share-component">
       <div className="share-component__icons">
-        {icons.map((icon) => {
+        {icons.map((icon, index) => {
           const I13nShareBarIcon =
               typeof i13nFunction === 'undefined' ? SharebarIcon : i13nFunction.generateI13nNode(SharebarIcon, true);
           return (<I13nShareBarIcon
@@ -76,7 +76,7 @@ export default function Sharebar({
                 i13nFunction.createI13nModel(
                   i13nFunction.createModuleItem({
                     id: icon,
-                    position: 1,
+                    position: `${ index + 1 }`,
                     type: 'content',
                   }),
                   'moduleItem')
