@@ -1,6 +1,7 @@
 /* eslint-disable camelcase, id-match  */
 import React from 'react';
 import SharebarIcon from './sharebar-icon';
+import PropTypes from 'prop-types';
 
 function slugCamelCase(word) {
   const slugCamelCaseReplacer = (match) => `-${ match.toLowerCase() }`;
@@ -95,25 +96,25 @@ Sharebar.defaultProps = {
 
 if (process.env.NODE_ENV !== 'production') {
   Sharebar.propTypes = {
-    iconSize: React.PropTypes.string,
-    icons: React.PropTypes.arrayOf(React.PropTypes.string),
-    title: React.PropTypes.string,
-    flyTitle: React.PropTypes.string,
-    urlOverrides: React.PropTypes.shape({
-      facebook: React.PropTypes.string,
-      twitter: React.PropTypes.string,
-      googleplus: React.PropTypes.string,
-      linkedin: React.PropTypes.string,
-      mail: React.PropTypes.string,
-      print: React.PropTypes.string,
-      whatsapp: React.PropTypes.string,
-      purchaseRights: React.PropTypes.string,
+    iconSize: PropTypes.string,
+    icons: PropTypes.arrayOf(PropTypes.string),
+    title: PropTypes.string,
+    flyTitle: PropTypes.string,
+    urlOverrides: PropTypes.shape({
+      facebook: PropTypes.string,
+      twitter: PropTypes.string,
+      googleplus: PropTypes.string,
+      linkedin: PropTypes.string,
+      mail: PropTypes.string,
+      print: PropTypes.string,
+      whatsapp: PropTypes.string,
+      purchaseRights: PropTypes.string,
     }),
-    i13nFunction: React.PropTypes.shape({
-      generateI13nNode: React.PropTypes.func,
-      createI13nModel: React.PropTypes.func,
-      createModule: React.PropTypes.func,
-      createModuleItem: React.PropTypes.func,
+    i13nFunction: PropTypes.shape({
+      generateI13nNode: PropTypes.func,
+      createI13nModel: PropTypes.func,
+      createModule: PropTypes.func,
+      createModuleItem: PropTypes.func,
     }),
   };
 }
