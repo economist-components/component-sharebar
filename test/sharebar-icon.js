@@ -1,6 +1,6 @@
 import React from 'react';
 import SharebarIcon from '../src/sharebar-icon';
-import TestUtils from 'react-addons-test-utils';
+import ShallowRenderer from 'react-test-renderer/shallow';
 import chai from 'chai';
 chai.should();
 
@@ -18,7 +18,7 @@ describe('Sharebar Icon', () => {
 
   describe('Render', () => {
     it('displays an icon', () => {
-      const renderer = TestUtils.createRenderer();
+      const renderer = new ShallowRenderer();
       renderer.render(
         <SharebarIcon
           title={'foo'}

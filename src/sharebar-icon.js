@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-no-bind */
 import Icon from '@economist/component-icon';
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export function handleClick(flyTitle, blogTitle, executeDefault, event) {
   const encodedFlytitle = encodeURIComponent(flyTitle);
@@ -49,9 +50,9 @@ export default function SharebarIcon({
 
 if (process.env.NODE_ENV !== 'production') {
   SharebarIcon.propTypes = {
-    url: React.PropTypes.string.isRequired,
-    title: React.PropTypes.string.isRequired,
-    icon: React.PropTypes.string.isRequired,
-    iconSize: React.PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    icon: PropTypes.string.isRequired,
+    iconSize: PropTypes.string.isRequired,
   };
 }

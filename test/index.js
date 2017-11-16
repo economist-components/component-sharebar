@@ -1,7 +1,7 @@
 import 'babel-polyfill';
 import React from 'react';
 import Sharebar from '../src';
-import TestUtils from 'react-addons-test-utils';
+import ShallowRenderer from 'react-test-renderer/shallow';
 import chai from 'chai';
 import chaiSpies from 'chai-spies';
 chai.use(chaiSpies).should();
@@ -15,7 +15,7 @@ describe('Sharebar', () => {
 
   describe('Render', () => {
     it('Facebook, Twitter, Google Plus, LinkedIn and WhatsApp by defaut', () => {
-      const renderer = TestUtils.createRenderer();
+      const renderer = new ShallowRenderer();
       renderer.render(
         <Sharebar />
       );
@@ -24,7 +24,7 @@ describe('Sharebar', () => {
     });
 
     it('can override the share icons', () => {
-      const renderer = TestUtils.createRenderer();
+      const renderer = new ShallowRenderer();
       renderer.render(
         <Sharebar
           icons={[
@@ -38,7 +38,7 @@ describe('Sharebar', () => {
     });
 
     it('slugify camel cased icons', () => {
-      const renderer = TestUtils.createRenderer();
+      const renderer = new ShallowRenderer();
       renderer.render(
         <Sharebar
           icons={[
