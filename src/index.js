@@ -61,7 +61,13 @@ export default function Sharebar({
       <div className="share-component__icons">
         {icons.map((icon, index) => {
           const I13nShareBarIcon =
-              typeof i13nFunction === 'undefined' ? SharebarIcon : i13nFunction.generateI13nNode(SharebarIcon, true);
+              typeof i13nFunction === 'undefined' ?
+                SharebarIcon :
+                i13nFunction.generateI13nNode(
+                  SharebarIcon,
+                  true,
+                  { props: { follow: false } }
+                );
           return (<I13nShareBarIcon
             key={icon}
             icon={slugCamelCase(icon)}
